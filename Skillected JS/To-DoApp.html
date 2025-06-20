@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 750px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 25px 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    form label {
+      margin-top: 10px;
+    }
+
+    form input {
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #218838;
+    }
+
+    table {
+      width: 100%;
+      border: 1px solid #ddd; /* Outer border only */
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: none; /* Removes the inner cell borders */
+    }
+
+    th {
+      background-color: #f8f8f8;
+    }
+
+   </style>
+</head>
+<body>
+  <div class="container">
+    <h1><u>Todo App</u></h1>
+    <form id="todoForm">
+      <label>Item Name:</label>
+      <input type="text" id="itemName" required />
+
+      <label>Quantity:</label>
+      <input type="number" id="quantity" required />
+
+      <label>Profile:</label>
+      <input type="text" id="profile" placeholder="enter image" />
+
+      <button type="submit">Add</button>
+    </form>
+
+    <h2><u>Todo List</u></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Quantity</th>
+          <th>Profile</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="todoList">
+        <!-- dynamic rows go here -->
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
