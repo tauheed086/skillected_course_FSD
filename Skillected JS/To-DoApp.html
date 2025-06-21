@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Todo App</title>
-  <!-- <link rel="stylesheet" href="style.css" /> -->
+   <script src="todo.js" defer></script>
    <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
     }
 
     .container {
-      width: 750px;
+      width: 800px;
       margin: 50px auto;
       background-color: white;
       padding: 25px 30px;
@@ -72,6 +72,24 @@
     th {
       background-color: #f8f8f8;
     }
+
+    .delete-btn {
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #000000;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+  }
+
+  .delete-btn:hover {
+    background-color: #218838;
+  }
+
+  .delete-btn:active {
+    transform: scale(0.95);
+  }
 
    </style>
 </head>
