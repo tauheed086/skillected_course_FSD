@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+</head>
+<body>
+    <h1>All Prodcts</h1>
+</body>
+<div id="counter">
+
+</div>
+<div id="container"></div>
+</html>
+<script>
+    var getproduct = JSON.parse(localStorage.getItem("product1"));
+    var length = getproduct.length;
+    console.log(length);
+
+    var div = document.createElement("div");
+    div.setAttribute("id", "counter");
+    div.innerText = `Count is: ${length}`;
+    document.getElementById("counter").appendChild(div);
+
+
+
+    getproduct.map(function(e,index){
+        var box = document.createElement("div");
+        var b1 = document.createElement("div");
+
+        var img = document.createElement("img");
+        img.src = e.image;
+        img.setAttribute("id","img")
+        img.style.width = "150px";
+        img.style.height = "150px";
+        img.style.objectFit = "cover"; 
+        var pname = document.createElement("h2");
+        pname.innerText = e.name;
+
+        
+        
+
+
+        var b2 = document.createElement("div");
+        b2.setAttribute("id","b2");
+        var remove = document.createElement("button");
+        remove.innerText = "Remove";
+        remove.addEventListener("click",function(){
+            removeItem(e,index);
+        })
+
+        var sold = document.createElement("button");
+        sold.innerText="sold"
+        if(e.sold=="false"){
+            var x = sold.style.backgroundColor="green"
+        }else{
+            var y = sold.style.backgroundColor="red";
+        }
+        sold.addEventListener("click", function(){
+            mysold(e,index);
+        })
+
+
+
+        b1.append(img,pname);
+        b2.append(remove,sold)
+        
+        
+
+
+
+        box.append(b1,b2);
+        document.querySelector("#container").append(box);
+
+
+        function mysold(e,index){
+            if (x){
+                sold.style.backgroundColor="red";
+                e.sold="true";
+                console.log(e.sold);
+            }else if(y){
+                sold.style.backgroundColor="green";
+                e.sold="false";
+                console.log(e.sold);
+            }
+
+        }
+
+
+        function removeItem(e,index){
+            console.log(e,index);
+            getproduct.splice(index,1);
+            localStorage.setItem("product1",JSON.stringify(getproduct));
+            window.location.reload();
+        }
+    })
+</script>
