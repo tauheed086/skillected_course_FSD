@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider App</title>
+</head>
+<body>
+    <button>
+        <a href="slide.html">Slider Page</a>
+    </button>
+    <input id="url" type="url" placeholder="Enter image URL">
+    <button onclick="storeImage()">submit</button>
+</body>
+</html>
+
+<script>
+    function storeImage() {
+        let image = document.getElementById("url").value;
+        let images = JSON.parse(localStorage.getItem("image1")) || [];
+        
+        images.push(image);
+        localStorage.setItem("image1", JSON.stringify(images));
+        document.getElementById("url").value = null;
+    }
+
+</script>

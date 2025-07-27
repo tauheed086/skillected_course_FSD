@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <h1 id = "Timer"></h1>
+    <button onclick="stop()"> stop </button>
+    <button onclick="restart()">restart</button>
+    <button onclick="continueTimer()">continue</button>
+
+</body>
+</html>
+
+<script>
+    let h1 = document.getElementById("Timer");
+    let i = 0;
+    let id = null;
+    function startInterval(){
+        if(!id){
+        id = setInterval(function(){
+        h1.innerText=i;
+        i++
+        }, 100);
+    }
+}
+    function stop(){
+        clearInterval(id);
+        id = null;
+    }
+
+    function continueTimer(){
+        startInterval();
+    }   
+
+    function restart(){
+        stop();
+        i =0;
+        startInterval();
+    }
+startInterval();
+</script>
