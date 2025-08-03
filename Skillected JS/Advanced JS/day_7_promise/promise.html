@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+
+    <h1>Promise</h1>
+    
+</body>
+</html>
+
+<script>
+    // const promise = new promise((resolve,reject)=>{
+    //     let success = true;{
+    //         if(success){
+    //             resolve("Promise is resolved");
+    //         } else {
+    //             reject("Promise is rejected");
+    //         }
+    //     }
+    // });
+
+
+    // Promise.then((result) => {
+    //     console.log(result);
+    // }).catch((error) => {
+    //     console.log(error);
+    // });
+
+    let myPromise = new Promise((resolve,reject) => {
+        let x = 5
+        if(x > 0){
+            resolve("x is positive");
+        }else{
+            reject("x is negative");
+        }
+    })
+
+    myPromise.then((message) => {
+        console.log("Resolved: " + message);
+    }).catch((error) => {
+        console.log(error);
+    });
+
+    function delay(ms){
+        return new Promise((resolve => {
+            setTimeout(()=>{
+                resolve("finished waiting")
+            },ms)
+        }));
+    }
+
+    async function showMessage() {
+        console.log("Waiting for 2 seconds...");
+        let message = await delay(2000);
+        console.log(message);
+        console.log("Done waiting!");
+    }
+
+    showMessage();
+</script>

@@ -11,13 +11,37 @@
     </button>
     <h1>Slider Page</h1>
 
-    <div id="images"></div>
     <button onclick="start()">slide start</button>
     <button onclick="stop()">slide stop</button>
+    <div id="images"></div>
 
 
     
 </body>
 </html>
 
-<script></script>
+<script>
+
+let imageDiv = document.getElementById("images");
+let i = 0
+let id
+function start(){
+    let image_arr = JSON.parse(localStorage.getItem("image1"));
+    let img = document.createElement("img");
+    id=setInterval(function(){
+        if( i == image_arr.length){
+            i = 0;
+        }
+        imageDiv.innerHTML = null;
+        img.src = image_arr[i];
+        imageDiv.append(img);
+        i++;
+    }, 1000);
+    
+}
+
+function stop(){
+    clearInterval(id);
+}
+
+</script>
