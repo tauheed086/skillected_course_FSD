@@ -4,9 +4,10 @@ const UserContextProvider = ({children}) => {
   // const [userDetail, setUserDetail] = 
 
   let name = "hello from context"
+  let FormTitle = "this is form title"
   return (
     <div>
-      <dataStore.Provider value={{name}}>
+      <dataStore.Provider value={{name, FormTitle}}>
         {children}
       </dataStore.Provider>
 

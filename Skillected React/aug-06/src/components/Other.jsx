@@ -8,6 +8,7 @@ const Other = () => {
 //  console.log(useContext(UserContext));
   return (
     <>
+    <h1>Other's Page</h1>
     <h1> {name}</h1>
     </>
   )

@@ -6,7 +6,7 @@ const UseStateHook = () => {
         const increment = () =>{
             // setCount(count + 1)  
             // setCount(count + 1)
-            console.log(count);
+            // console.log(count);
             setCount((prev) => prev + 1);
             setCount((prev) => prev + 1);
 
