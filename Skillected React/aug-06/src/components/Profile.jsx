@@ -1,12 +1,8 @@
+import React from 'react'
 
-const Profile = ({data}) => {
-
+const Profile = () => {
   return (
-    <div>
-      <h1>Welcome {data.name}</h1>
-      <p>{data.email}</p>
-      <button>refresh</button>
-    </div>
+    <div>Home Page</div>
   )
 }
 
